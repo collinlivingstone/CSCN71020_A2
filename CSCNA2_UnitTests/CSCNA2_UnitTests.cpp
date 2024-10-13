@@ -23,7 +23,6 @@ namespace CSCNA2UnitTests
 			result = getPerimeter(&length, &width);
 
 			Assert::AreEqual(20, result);
-
 		}
 	};
 
