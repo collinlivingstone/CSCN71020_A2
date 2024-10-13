@@ -12,34 +12,33 @@ namespace CSCNA2UnitTests
 	{
 	public:
 		
-		TEST_METHOD(TwoPositiveIntergers)
+		TEST_METHOD(TwoSamePositiveIntergers)
 		{
-			int x = 5;
-			int y = 5;
+			int length = 5;
+			int width = 5;
 
 			int result = 0;
-			result = getPerimeter(&x, &y);
+			result = getPerimeter(&length, &width);
 
-			Assert::AreEqual(15, result);
+			Assert::AreEqual(20, result);
 
 		}
 	};
 
 
-	TEST_CLASS(AreaTestsFunctionality)
+	TEST_CLASS(AreaFunctionalityTests)
 	{
 	public:
 
-		TEST_METHOD(TwoPositiveIntergers)
+		TEST_METHOD(TwoSamePositiveIntergers)
 		{
-			int x = 5;
-			int y = 5;
+			int length = 5;
+			int width = 5;
 
 			int result = 0;
-			result = getArea(&x, &y);
+			result = getArea(&length, &width);
 
 			Assert::AreEqual(25, result);
-
 		}
 	};
 }
