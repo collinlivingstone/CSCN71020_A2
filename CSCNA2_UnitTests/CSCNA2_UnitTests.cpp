@@ -5,6 +5,8 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 extern "C" int getPerimeter(int*, int*);
 extern "C" int getArea(int*, int*);
+extern "C" void setLength(int, int*);
+extern "C" void setWidth(int, int*);
 
 namespace CSCNA2UnitTests
 {
@@ -41,4 +43,54 @@ namespace CSCNA2UnitTests
 			Assert::AreEqual(25, result);
 		}
 	};
+
+
+	TEST_CLASS(SetLengthFunctionality)
+	{
+	public:
+
+		TEST_METHOD(SetMaxIntergerWidth)
+		{
+			int outputWidth = 0;
+
+			setLength(99, &outputWidth);
+
+			Assert::AreEqual(99, outputWidth);
+		}
+
+		TEST_METHOD(SetLengthFromNegativeNumber)
+		{
+			int outputWidth = -10;
+
+			setLength(10, &outputWidth);
+
+			Assert::AreEqual(10, outputWidth);
+		}
+
+		TEST_METHOD(SetFromLargeNumberGreaterThanScope)
+		{
+			int outputWidth = 2000;
+
+			setLength(50, &outputWidth);
+
+			Assert::AreEqual(50, outputWidth);
+		}
+	};
+
+
+	/*TEST_CLASS(SetWidthFunctionality)
+	{
+	public:
+
+		TEST_METHOD(TwoSamePositiveIntergers)
+		{
+			int length = 5;
+			int width = 5;
+
+			int result = 0;
+			result = getArea(&length, &width);
+
+			Assert::AreEqual(25, result);
+		}
+	};*/
 }
