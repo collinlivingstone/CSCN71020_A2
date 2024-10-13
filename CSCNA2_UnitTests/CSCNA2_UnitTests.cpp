@@ -49,7 +49,7 @@ namespace CSCNA2UnitTests
 	{
 	public:
 
-		TEST_METHOD(SetMaxIntergerWidth)
+		TEST_METHOD(SetMaxLength99)
 		{
 			int outputWidth = 0;
 
@@ -78,19 +78,36 @@ namespace CSCNA2UnitTests
 	};
 
 
-	/*TEST_CLASS(SetWidthFunctionality)
+	TEST_CLASS(SetWidthFunctionality)
 	{
 	public:
 
-		TEST_METHOD(TwoSamePositiveIntergers)
+		TEST_METHOD(SetWidthFromNegativeNumber)
 		{
-			int length = 5;
-			int width = 5;
+			int outputWidth = -30;
 
-			int result = 0;
-			result = getArea(&length, &width);
+			setWidth(20, &outputWidth);
 
-			Assert::AreEqual(25, result);
+			Assert::AreEqual(20, outputWidth);
 		}
-	};*/
+
+		TEST_METHOD(SetWidthToZero)
+		{
+			int outputWidth = 10;
+
+			setWidth(0, &outputWidth);
+
+			//Keeps initial value of 10
+			Assert::AreEqual(10, outputWidth);
+		}
+
+		TEST_METHOD(SetMaxWidth99)
+		{
+			int outputWidth = -30;
+
+			setWidth(99, &outputWidth);
+
+			Assert::AreEqual(99, outputWidth);
+		}
+	};
 }
